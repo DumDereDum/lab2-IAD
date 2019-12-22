@@ -11,12 +11,20 @@ messages = [
     'но',
     'я люблю тебя!!',
     'fuck',
-    'спасибо'
+    'нахуй',
+    ' ',
+    'fgh',
+    'dfghjk',
+    'tyu'
 
 ]
+i=0
+while i < len(messages):
+    results = model.predict(messages[0:2], k=1)
 
-results = model.predict(list(messages), k=2)
+    for message, sentiment in zip(messages[0:2], results):
+        #print(message, '->', list(sentiment.keys())[0])
+        print(message, '->', sentiment)
+    i+=2
 
-for message, sentiment in zip(messages, results):
-    #print(message, '->', list(sentiment.keys())[0])
-    print(message, '->', sentiment)
+print("11  ", len('\n'))

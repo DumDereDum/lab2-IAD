@@ -15,8 +15,8 @@ words = defaultdict(int)
 
 for tweet in tweets:
     num = 0
-    for word in tweet[17:].split(' '):
-        if word != '\n':
+    for word in tweet[17:].split():
+        if len(word) > 2 and word != '\n' and word != '' and word != '\0' and word != ' ':
             num += 1
             numOfWords += 1
             words[word] += 1
@@ -29,7 +29,8 @@ nums.sort(key=lambda i: i[1], reverse=True)
 for x in nums:
     res = x[0] + ' - ' + str(x[1]) + ' - ' + str(round(x[1]*100/numOfWords, 4)) + '%'
     file1.write(res + '\n')
-    file3.write(x[0] + ' \n')
+    file3.write(x[0] + '\n')
+    print(x[0])
 
 lens = list(lengths.items())
 lens.sort(key=lambda i: i[1], reverse=True)

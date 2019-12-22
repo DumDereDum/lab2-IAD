@@ -1,18 +1,14 @@
 import nltk
 from stop_words import get_stop_words
 from nltk.corpus import stopwords
-#from nltk.stem import PorterStemmer
 import re
 import pymorphy2
 
-
-#nltk.download('stopwords')
 
 stop_words = list(get_stop_words('ru'))
 nltk_words = list(stopwords.words('russian'))
 stop_words.extend(nltk_words)
 rep = re.compile("[^a-zA-Zа-яА-Я ]")
-#ps = PorterStemmer()
 morph = pymorphy2.MorphAnalyzer()
 
 data = open("data.txt", "r")
