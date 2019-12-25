@@ -15,6 +15,7 @@ data = open("data.txt", "r")
 file = open("prepared_data", "w")
 
 tweets = data.readlines()
+tweets[0] = tweets[0][1:]
 for tweet in tweets:
     res = tweet[:17]
     temp = ""

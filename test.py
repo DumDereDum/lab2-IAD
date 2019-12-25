@@ -1,30 +1,10 @@
-import dostoevsky
-#dostoevsky download fasttext-social-network-model
+times = pd.DataFrame(full_data, index=range(len(full_data), 0, -1))
+times['Time'] = pd.to_datetime(list(times['Time']))
+times = times.sort_values(by='Time')
+times
+right = times['Time'][1] + pd.Timedelta(30, unit='m')
+mask_main = (times['Time'] < right)
 
-from dostoevsky.tokenization import RegexTokenizer
-from dostoevsky.models import FastTextSocialNetworkModel
+mask_neg = mask_main & (times['Assessment'] > 0)
 
-tokenizer = RegexTokenizer()
-model = FastTextSocialNetworkModel(tokenizer=tokenizer)
-
-messages = [
-    'но',
-    'я люблю тебя!!',
-    'fuck',
-    'нахуй',
-    ' ',
-    'fgh',
-    'dfghjk',
-    'tyu'
-
-]
-i=0
-while i < len(messages):
-    results = model.predict(messages[0:2], k=1)
-
-    for message, sentiment in zip(messages[0:2], results):
-        #print(message, '->', list(sentiment.keys())[0])
-        print(message, '->', sentiment)
-    i+=2
-
-print("11  ", len('\n'))
+times.loc[mask_neg]
