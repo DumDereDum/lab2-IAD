@@ -1,0 +1,19 @@
+Sum rule ( -1 <= Neutral <=1 ):
+Good - 1552 - 15.52% 
+Bad - 381 - 3.81% 
+Neutral - 8067 - 80.67% 
+
+Sum rule ( -1 < Neutral < 1 ):
+Good - 4011 - 40.11% 
+Bad - 1554 - 15.54% 
+Neutral - 4435 - 44.35% 
+
+Percent rule:
+Good - 7 - 0.07% 
+Bad - 25 - 0.25% 
+Neutral - 9968 - 99.68% 
+
+Strange rule:
+Good - 3604 - 36.04% 
+Bad - 1328 - 13.28% 
+Neutral - 5068 - 50.68% 
