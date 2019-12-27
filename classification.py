@@ -66,11 +66,11 @@ for tweet in tweets:
     else: res4['Neutral'] += 1
 
 file = open("classifications.txt", "w")
-file.write('Sum rule ( 1 <= Neutral <=1 ):\n')
+file.write('Sum rule ( -1 <= Neutral <=1 ):\n')
 for x in res1:
     file.write(x+' - '+str(res1[x])+' - '+str(round(res1[x]*100/numOfTweets, 4))+'% \n')
 
-file.write('\nSum rule ( 1 < Neutral < 1 ):\n')
+file.write('\nSum rule ( -1 < Neutral < 1 ):\n')
 for x in res2:
     file.write(x+' - '+str(res2[x])+' - '+str(round(res2[x]*100/numOfTweets, 4))+'% \n')
 
